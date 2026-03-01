@@ -1,0 +1,168 @@
+---
+title: Troubleshooting
+description: Common issues and solutions for PowerNukkitX server problems.
+---
+
+# Troubleshooting
+
+Encountering issues? This guide covers common problems and their solutions.
+
+## Server Won't Start
+
+### Java Version Issues
+
+**Problem**: Server crashes immediately or shows "Unsupported class version" error.
+
+**Solution**:
+- PowerNukkitX requires **Java 21** or later
+- Check your Java version: `java -version`
+- Download Java 21 from [Adoptium](https://adoptium.net/temurin/releases/)
+
+### Port Already in Use
+
+**Problem**: Error message: "Port 19132 is already in use"
+
+**Solution**:
+- Another server is using the same port
+- Change the port in `server.properties`: `server-port=19133`
+- Or stop the other application using port 19132
+
+### Corrupted Configuration
+
+**Problem**: Server crashes with config-related errors.
+
+**Solution**:
+- Delete `pnx.yml` and `server.properties`
+- Restart the server to generate fresh configs
+- Reapply your custom settings carefully
+
+---
+
+## Players Can't Connect
+
+### Local Connection Issues
+
+**Problem**: Can't join using `127.0.0.1` on Windows.
+
+**Solution**:
+- Use your LAN IP instead (e.g., `192.168.x.x`)
+- Find your LAN IP: Run `ipconfig` in Command Prompt
+- Or apply Windows loopback exemption (see [Installation Guide](/docs/guide/installation))
+
+### Port Forwarding Not Working
+
+**Problem**: Friends can't join from outside your network.
+
+**Solution**:
+1. **Verify port forwarding**: UDP port `19132` must be forwarded
+2. **Check firewall**: Allow Java/PowerNukkitX through Windows Firewall
+3. **Use correct IP**: Share your public IP (search "what is my ip")
+4. **Test locally first**: Ensure you can join before inviting friends
+
+### Whitelist Enabled
+
+**Problem**: Players get "Not whitelisted" message.
+
+**Solution**:
+- Add players to `white-list.txt`
+- Or disable whitelist: `whitelist off` in console
+
+---
+
+## Performance Issues
+
+### Server Lag / TPS Drops
+
+**Problem**: Server is slow, blocks take time to break.
+
+**Solution**:
+- **Allocate more RAM**: Edit startup script (increase `-Xmx` value)
+- **Reduce view distance**: Lower `view-distance` in `server.properties`
+- **Limit entities**: Check for entity farms or mob spawners
+- **Update plugins**: Old or inefficient plugins cause lag
+- **Check server specs**: Ensure your hardware meets requirements
+
+### High Memory Usage
+
+**Problem**: Server uses too much RAM.
+
+**Solution**:
+- Reduce allocated RAM if over-provisioned
+- Clear unused chunks
+- Limit loaded plugins
+- Restart server regularly (daily/weekly)
+
+---
+
+## Plugin Issues
+
+### Plugin Not Loading
+
+**Problem**: Plugin doesn't appear in `plugins` list.
+
+**Solution**:
+- Check `logs/server.log` for errors
+- Verify plugin compatibility with your PowerNukkitX version
+- Ensure `.jar` file is in the `plugins/` folder (not a subfolder)
+- Check for missing plugin dependencies
+
+### Plugin Conflicts
+
+**Problem**: Two plugins don't work together.
+
+**Solution**:
+- Check plugin documentation for known conflicts
+- Remove one plugin at a time to identify the issue
+- Update both plugins to latest versions
+
+---
+
+## World Corruption
+
+### World Won't Load
+
+**Problem**: Server crashes when loading a world.
+
+**Solution**:
+1. **Restore from backup**: Replace `worlds/world/` with your backup
+2. **Delete region files**: Remove corrupted chunks from `worlds/world/db/`
+3. **Start fresh**: Rename `worlds/` and generate a new world
+
+---
+
+## Finding Help
+
+<Steps>
+
+### Check the Logs
+Always check `logs/server.log` for error messages:
+```bash
+tail -f logs/server.log  # Linux/macOS
+Get-Content logs/server.log -Tail 50  # Windows PowerShell
+```
+
+### Search for Errors
+Copy the error message and search:
+- PowerNukkitX GitHub Issues
+- Discord Community
+- Google/Stack Overflow
+
+### Ask for Help
+When asking for help, provide:
+- **Server version**: `version` command output
+- **Error message**: Full error from logs
+- **Steps to reproduce**: What you did before the error occurred
+- **Recent changes**: New plugins, config changes, updates
+
+</Steps>
+
+---
+
+## Still Stuck?
+
+<Blockquote color="primary">
+  Join the PowerNukkitX community for support:
+  - **Discord**: Active community chat
+  - **GitHub**: Report bugs and issues
+  - **Forums**: Detailed discussions
+</Blockquote>

@@ -1,0 +1,94 @@
+---
+title: Commands
+description: Essential commands for managing your PowerNukkitX server.
+---
+
+# Commands
+
+Master the essential commands needed to manage your PowerNukkitX server effectively.
+
+## Basic Server Commands
+
+| Command | Description |
+| :--- | :--- |
+| `stop` | Safely saves and shuts down the server |
+| `save-all` | Manually saves all world data |
+| `reload` | Reloads plugins and configs (use with caution) |
+| `plugins` | Lists all loaded plugins |
+| `version` | Shows server version information |
+
+---
+
+## Player Management
+
+### Operator Commands
+
+| Command | Description |
+| :--- | :--- |
+| `op <player>` | Grants operator status to a player |
+| `deop <player>` | Removes operator status from a player |
+| `kick <player> [reason]` | Kicks a player from the server |
+| `ban <player> [reason]` | Bans a player permanently |
+| `pardon <player>` | Unbans a player |
+| `ban-ip <ip>` | Bans an IP address |
+
+### Whitelist Commands
+
+| Command | Description |
+| :--- | :--- |
+| `whitelist on` | Enables the whitelist |
+| `whitelist off` | Disables the whitelist |
+| `whitelist add <player>` | Adds a player to the whitelist |
+| `whitelist remove <player>` | Removes a player from the whitelist |
+| `whitelist list` | Lists all whitelisted players |
+
+---
+
+## Gameplay Commands
+
+### Game Management
+
+| Command | Description |
+| :--- | :--- |
+| `gamemode <mode> [player]` | Changes game mode (`0-3` or `survival`, `creative`, etc.) |
+| `difficulty <level>` | Sets difficulty (`0-3` or `peaceful`, `easy`, etc.) |
+| `time set <value>` | Sets world time (`day`, `night`, or tick value) |
+| `weather <type>` | Changes weather (`clear`, `rain`, `thunder`) |
+| `tp <player> <x> <y> <z>` | Teleports a player to coordinates |
+
+### World Commands
+
+| Command | Description |
+| :--- | :--- |
+| `seed` | Shows the world seed |
+| `setworldspawn <x> <y> <z>` | Sets the world spawn point |
+
+---
+
+## Running Commands
+
+<Steps>
+
+### In Console
+Type commands directly without the `/` prefix:
+```bash
+op Steve
+gamemode creative Alex
+```
+
+### In-Game
+Players with OP status use `/` before commands:
+```text
+/gamemode creative
+/time set day
+```
+
+</Steps>
+
+---
+
+## Important Notes
+
+<Blockquote color="primary">
+  **Tip**: Most commands support tab completion. Start typing and press Tab to see suggestions.
+</Blockquote>

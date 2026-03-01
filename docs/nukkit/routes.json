@@ -1,0 +1,80 @@
+{
+    "routes": [
+        {
+            "key": "guide",
+            "title": "Getting Started",
+            "defaultOpen": true,
+            "keywords": "guide, getting started, start, heroui",
+            "routes": [
+                {
+                    "key": "introduction",
+                    "title": "Introduction",
+                    "keywords": "introduction, heroui",
+                    "path": "/docs/nukkit/guide/intro.mdx"
+                },
+                {
+                    "key": "installation",
+                    "title": "Installation",
+                    "keywords": "getting started, installation, start, heroui",
+                    "path": "/docs/nukkit/guide/installation.mdx"
+                },
+                {
+                    "key": "hosting",
+                    "title": "Hosting Platforms",
+                    "keywords": "hosting, server, paper, spigot, free hosting, paid hosting, vps",
+                    "path": "/docs/nukkit/guide/hosting.mdx"
+                },
+                {
+                    "key": "server-overview",
+                    "title": "Server Overview",
+                    "keywords": "server overview, directory structure, files, config",
+                    "path": "/docs/nukkit/guide/server-overview.mdx"
+                },
+                {
+                    "key": "next-steps",
+                    "title": "Next Steps",
+                    "keywords": "next steps, configuration, plugins, permissions, op, commands",
+                    "path": "/docs/nukkit/guide/next-steps.mdx"
+                }
+            ]
+        },
+        {
+            "key": "how-to-guide",
+            "title": "How to Guide",
+            "defaultOpen": true,
+            "keywords": "how to guide, configuration, plugins, commands, updating, troubleshooting",
+            "routes": [
+                {
+                    "key": "configuration",
+                    "title": "Configuration",
+                    "keywords": "configuration, settings, server.properties, nukkit.yml",
+                    "path": "/docs/nukkit/how-to/configuration.mdx"
+                },
+                {
+                    "key": "plugins",
+                    "title": "Plugins",
+                    "keywords": "plugins, addons, extensions, mods",
+                    "path": "/docs/nukkit/how-to/plugins.mdx"
+                },
+                {
+                    "key": "commands",
+                    "title": "Commands",
+                    "keywords": "commands, console, admin, operator",
+                    "path": "/docs/nukkit/how-to/commands.mdx"
+                },
+                {
+                    "key": "updating",
+                    "title": "Updating",
+                    "keywords": "updating, upgrade, new version",
+                    "path": "/docs/nukkit/how-to/updating.mdx"
+                },
+                {
+                    "key": "troubleshooting",
+                    "title": "Troubleshooting",
+                    "keywords": "troubleshooting, errors, debug, fix, issues",
+                    "path": "/docs/nukkit/how-to/troubleshooting.mdx"
+                }
+            ]
+        }
+    ]
+}

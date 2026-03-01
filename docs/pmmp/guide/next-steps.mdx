@@ -1,0 +1,92 @@
+---
+title: Next Steps
+description: Essential configuration and management steps for your new PocketMine-MP server.
+---
+
+# Next Steps
+
+Congratulations on installing your PocketMine-MP server! Now that your server is running, here are the essential next steps to configure and manage it.
+
+## Server Configuration
+
+The main configuration file for your server is `server.properties`. This file is generated in your server folder after the first startup.
+
+You can edit this file with any text editor (like Notepad, VS Code, or Nano) to change key settings:
+
+- **`motd`**: The "Message of the Day" shown in the server list.
+- **`server-port`**: The port the server listens on (Default: `19132`).
+- **`max-players`**: The maximum number of players allowed to join (Default: `20`).
+- **`gamemode`**: The default game mode (`SURVIVAL`, `CREATIVE`, `ADVENTURE`, `SPECTATOR`).
+- **`white-list`**: Set to `on` to only allow specific players to join.
+- **`xbox-auth`**: Set to `on` to require players to be authenticated with Xbox Live.
+
+<Blockquote color="warning">
+  **Note**: You must **restart** the server for changes in `server.properties` to take effect.
+</Blockquote>
+
+---
+
+## Managing Permissions (OP)
+
+To perform administrative tasks in-game (like changing gamemodes or banning players), you need "Operator" (OP) status.
+
+### Granting OP
+Go to your server **console** (the terminal window where the server is running) and type:
+
+```bash
+op <player_name>
+```
+*Example: `op Steve`*
+
+### Revoking OP
+To remove operator status:
+
+```bash
+deop <player_name>
+```
+
+---
+
+## Installing Plugins
+
+Plugins extend the functionality of your server, adding new features like minigames, economy, or protection tools.
+
+<Steps>
+
+### Find Plugins
+Explore [Poggit](https://poggit.pmmp.io/plugins) or the official PocketMine-MP community forums for compatible plugins.
+
+### Install
+1. **Stop** your server if it is running (type `stop` in console).
+2. Download the plugin `.phar` file.
+3. Place the file into the `plugins` folder inside your server directory.
+
+### Activate
+Start your server. The plugin will be loaded automatically. You can verify this by typing `plugins` in the console.
+
+</Steps>
+
+---
+
+## Basic Commands
+
+Here are some useful commands to manage your server:
+
+| Command | Description |
+| :--- | :--- |
+| `stop` | Safely saves data and shuts down the server. |
+| `save-all` | Forces the server to save the world and player data. |
+| `gamemode <mode> [player]` | Changes a player's game mode. |
+| `whitelist add <player>` | Adds a player to the whitelist. |
+| `ban <player>` | Bans a player from the server. |
+| `kick <player>` | Kicks a player from the server. |
+
+---
+
+## Getting Help
+
+If you run into issues or have questions:
+
+- **Check logs**: Read the `server.log` file / console output for errors.
+- **Community**: Join our Discord community for support.
+- **Documentation**: Explore the rest of these docs for advanced topics.

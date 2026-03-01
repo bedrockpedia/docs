@@ -1,0 +1,160 @@
+---
+title: Installation
+description: A step-by-step guide to installing PocketMine-MP on Windows, Linux, and macOS.
+---
+
+# Installation
+
+Get your PocketMine-MP server up and running on your preferred operating system.
+
+## Requirements
+
+Before we begin, make sure you understand that **PocketMine-MP runs on PHP, not Java.**
+
+- You will need the **PocketMine-MP.phar** file (The server core).
+- You will need a custom **PHP Binary** compiled for PMMP.
+
+---
+
+## Windows
+
+Follow these steps to set up your server on Windows manually:
+
+<Steps>
+
+### Create a Server Folder
+Create a new folder on your computer named `PocketMine-MP-server`.
+
+### Download PHP Binary & Server Files
+1. Go to the [PocketMine-MP Releases](https://github.com/pmmp/PocketMine-MP/releases).
+2. Download the custom [PHP binary zip](https://github.com/pmmp/PHP-Binaries/releases). Extract the `.zip` so that you have a `bin/` folder inside your `PocketMine-MP-server` folder.
+2. Download the newest `PocketMine-MP.phar` and place it in the server folder.
+4. Download the `start.cmd` script into the server folder.
+
+### Install Visual C++ Redistributable
+Inside the `bin/` folder you extracted, run `vc_redist.x64.exe` to install the required Microsoft Visual C++ redistributables if you don't already have them.
+
+### Run the Server
+Double-click `start.cmd` to launch your server. The first time, it will guide you through an interactive setup wizard.
+
+</Steps>
+
+---
+
+## Linux & macOS
+
+Follow these steps to install PocketMine-MP manually on Linux (Ubuntu, Debian, CentOS, etc.) and macOS using the terminal.
+
+<Steps>
+
+### Setup Server Directory
+Open your terminal and create a directory for your server, then enter it:
+
+```bash
+mkdir PocketMine-MP-server
+cd PocketMine-MP-server
+```
+
+### Download PHP Binary
+Find the download link for the right PHP version for your OS from the [PHP Binaries Releases](https://github.com/pmmp/PHP-Binaries/releases). Fetch and extract it using `curl` and `tar`:
+
+```bash
+curl -L <link to your chosen PHP binary> | tar -xz
+```
+*Note: This will create a `bin` folder.*
+
+### Download Server Files
+Find the latest download links for `PocketMine-MP.phar` and `start.sh` from the [PocketMine-MP Releases](https://github.com/pmmp/PocketMine-MP/releases). Download them into the directory:
+
+```bash
+curl -LO <link to PocketMine-MP.phar>
+curl -LO <link to start.sh>
+```
+
+### Grant Permissions & Run
+Make the startup script executable:
+
+```bash
+chmod +x ./start.sh
+```
+
+Once the files are downloaded and permissions are set, start your server:
+
+```bash
+./start.sh
+```
+
+You will be greeted by the interactive setup wizard in the terminal.
+
+</Steps>
+
+<Blockquote color="warning">
+  **⚠️ Important Note on PHP Binaries**: Make sure you know which binary to use for your chosen version of PocketMine-MP. Different versions need different binaries. You can get some information about this from the [update.pmmp.io API](https://update.pmmp.io/api).
+  
+  Binaries have a suffix that tells you which PocketMine-MP version they are for. Specifically, `PM4` is for 4.x, and `PM5` is for 5.x.
+  
+  There are also different downloads for different operating systems, CPU architectures, and versions of PHP. If you use the wrong binary, the server might not work.
+</Blockquote>
+
+---
+
+## Join Locally
+
+You can connect to your own server using the generic local IP address.
+
+<Steps>
+
+### Open Minecraft
+Open Minecraft Bedrock Edition.
+
+### Go to Servers
+Navigate to **Play** > **Servers**.
+
+### Add Server
+Click on the **Add Server** button.
+
+### Enter Details
+Fill in the server information:
+- **Server Name**: `Localhost`
+- **Server Address**: `127.0.0.1`
+- **Port**: `19132` (Default)
+
+### Save and Join
+Click **Save**, find the server in the list, and join it.
+
+</Steps>
+
+<Blockquote color="danger">
+  🚫 **Warning**: Some people may not be able to connect to their server using the local IP `127.0.0.1`. If this happens, try connecting with your LAN IP (for example `192.168.x.x`). Do NOT use `localhost` for IP address.
+
+  **How to find LAN IP (Windows):** Open Command Prompt and type `ipconfig`. Look for "IPv4 Address".
+</Blockquote>
+
+---
+
+## Let Friends Join
+
+To allow friends to join from outside your local network (e.g., from their homes), you need to make your server publicly accessible.
+
+<Steps>
+
+### Port Forward
+Log in to your router's admin panel and forward **UDP** port **19132** to your computer's local IP.
+
+### Find Public IP
+Search "what is my ip" on Google to find your public IP address.
+
+### Share Details
+Send your **Public IP** address and port (`19132`) to your friends.
+
+### Connection
+Your friends should add the server using your **Public IP** as the address.
+
+</Steps>
+
+---
+
+### Now you can join the server!
+Your PocketMine-MP server is ready. Enjoy playing!
+
+If you have any issues joining, please check your firewall settings or ask for help in our [community](/docs/guide/introduction#community).

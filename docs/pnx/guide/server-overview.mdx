@@ -1,0 +1,97 @@
+---
+title: Server Overview
+description: A complete guide to the PowerNukkitX server directory and files.
+---
+
+# Server Overview
+
+After successfully starting your server, you will see several generated files and folders. This is the standard structure for a PowerNukkitX server.
+
+## File Structure
+
+Here is the complete directory map of a PowerNukkitX server:
+
+```text
+Server/
+├── command_data/              <- Command system data
+├── logs/                      <- Server logs
+├── players/                   <- Player data (LevelDB)
+├── plugins/                   <- Install your .jar plugins here
+├── resource_packs/            <- Custom textures and assets
+├── services/                  <- Internal services
+├── structures/                <- Custom structures
+├── worlds/                    <- Your Minecraft worlds
+├── banned-players.json        <- List of banned players
+├── banned-ips.json            <- List of banned IPs
+├── ops.txt                    <- Server operators (admins)
+├── pnx.yml                    <- PowerNukkitX configuration
+├── powernukkitx.jar           <- The server core file
+├── START.bat                  <- Windows startup script
+└── white-list.txt             <- Whitelist for allowed players
+
+
+```
+
+---
+
+## Folders Explained
+
+### `command_data/`
+This folder keeps the data related to server commands, like settings or information about commands being used on the server.
+
+### `logs/`
+This folder contains the server logs. Logs are like a record of what happens on the server, such as errors, warnings, and other activities. Admins can check this folder to see what's going on.
+
+### `players/`
+This folder holds data about players on the server, like their inventory, achievements, and other player-related info. It's saved in a special format called `LevelDB`.
+
+### `plugins/`
+Here, you put your plugins (which are `.jar` files). Plugins add new features to your server. For example, they can create new commands or change how the game works.
+
+### `resource_packs/`
+This folder is where you can add custom textures and sounds for the game. Resource packs change how the game looks and sounds, like custom skins or different block textures.
+
+### `services/`
+This folder holds internal files for services that the server uses. It's for things the server needs to run smoothly but isn't usually something admins need to change.
+
+### `structures/`
+This folder stores custom structures created by players or saved by the server (e.g., from commands like `/structure save`).
+
+### `worlds/`
+This folder holds all the Minecraft worlds the server uses. For example, the main world, the Nether, and the End all have their own folders here.
+**Important**: **Back up this folder regularly** to prevent data loss.
+
+---
+
+## Important Files
+
+### `banned-players.json`
+This file lists the players who have been banned from the server. It helps the server know which players are not allowed to join.
+
+### `banned-ips.json`
+This file lists the IP addresses that have been banned from the server. It helps the server know which IP addresses are not allowed to join.
+
+### `ops.txt`
+This file lists the server operators (admins). Players listed here have full command access.
+
+### `pnx.yml`
+This is the main settings file for PowerNukkitX. It holds all the server's configuration options, like performance settings, plugin settings, and other important server details.
+
+### `powernukkitx.jar`
+This is the file that runs the server. It’s the core file that makes the PowerNukkitX server work. When you start the server, this is the file it uses.
+
+### `START.bat`
+This is your startup script (for Windows). Double-click this to launch the server.
+- On Linux/macOS, you would use `start.sh` or `start.command`.
+
+### `white-list.txt`
+This file lists the players who are allowed to join the server. When the whitelist is enabled, only players in this file can join server.
+- **Enable**: Set `white-list=true` in `pnx.yml`.
+
+---
+
+## The Console
+
+The terminal window where you started the server is your **Console**.
+- **Run commands**: Type commands like `op <player>`, `gamemode 1 <player>`, or `stop`.
+- **Safety**: Do **not** close this window directly! Always type `stop` to save and shut down safely.

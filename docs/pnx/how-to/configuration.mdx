@@ -1,0 +1,58 @@
+---
+title: Configuration
+description: Learn how to configure your PowerNukkitX server settings.
+---
+
+# Configuration
+
+PowerNukkitX offers extensive configuration options to customize your server's behavior, performance, and features.
+
+## Main Configuration Files
+
+### `pnx.yml`
+The standard Minecraft server configuration file.
+
+**Common Settings:**
+
+- `ip`: The IP address the server will bind to
+- `port`: The port your server runs on (default: `19132`)
+- `maxPlayers`: Maximum number of players allowed
+- `gamemode`: Default game mode (`0`=Survival, `1`=Creative, `2`=Adventure, `3`=Spectator)
+- `difficulty`: World difficulty (`0`=Peaceful, `1`=Easy, `2`=Normal, `3`=Hard)
+- `xboxAuth`: Whether to enable Xbox authentication (`true`/`false`)
+- `pvp`: Enable player vs player combat (`true`/`false`)
+
+---
+
+## Editing Configuration
+
+<Steps>
+
+### Stop the Server
+Always stop your server before editing config files:
+```bash
+stop
+```
+
+### Edit the File
+Open `server.properties` or `pnx.yml` with any text editor (Notepad, VS Code, Nano).
+
+### Save Changes
+Save the file after making your changes.
+
+### Restart the Server
+Start your server to apply the new settings.
+
+</Steps>
+
+---
+
+## Important Notes
+
+<Blockquote color="warning">
+  **Warning**: Invalid values in config files can prevent your server from starting. Always backup your config files before making changes.
+</Blockquote>
+
+- Changes only take effect **after a restart**
+- Comments in config files start with `#`
+- Boolean values are `true` or `false` (lowercase)

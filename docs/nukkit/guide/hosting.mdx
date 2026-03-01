@@ -1,0 +1,74 @@
+---
+title: Hosting Platforms
+description: Learn about the supported platforms and hosting providers for Nukkit.
+---
+
+# Hosting Platforms
+
+Nukkit gives you the flexibility to host your server on various platforms, from local machines to dedicated hosting services.
+
+## Supported Platforms
+
+Nukkit is a Java application, meaning it can run on almost any operating system that supports **Java 8 or later**.
+
+- **Windows**: 10, 11, Server 2019/2022
+- **Linux**: Ubuntu, Debian, CentOS, Fedora, Arch Linux
+- **macOS**: macOS 12 Monterey or newer
+- **Android**: Via Termux (Advanced users)
+
+---
+
+## Hosting Providers
+
+You can choose between paid and free hosting providers depending on your needs.
+
+### Paid Hosting
+Paid hosts generally offer better performance, 24/7 uptime, and dedicated support.
+
+- **Dedicated Minecraft Hosting**: Services like Apex Hosting, PebbleHost, or Bloom.host. (Look for "Custom Jar" support)
+- **VPS (Virtual Private Server)**: Full control over the OS. Providers like OVH, Hetzner, DigitalOcean, or AWS.
+- **Dedicated Servers**: For large communities requiring maximum performance.
+
+### Free Hosting
+Great for testing or small private servers with friends.
+
+- **Oracle Cloud (Always Free)**: Offers powerful ARM-based VPS instances (up to 24GB RAM allowed). Highly recommended if you can set it up.
+- **Aternos**: (Limited support) Good for quick start, but performance may be restricted.
+- **Self-Hosting**: Host on your own PC. (Requires Port Forwarding).
+
+---
+
+## Hosting on Paper/Spigot Hosts
+
+Many hosting providers are designed for "Java Edition" servers (Paper, Spigot, Vanilla), but you can easily run Nukkit on them because it is also a Java-based server.
+
+### Tutorial: How to Install on a Standard Java Host
+
+If your host uses a panel like Pterodactyl or Multicraft and doesn't explicitly list "Nukkit", follow these steps:
+
+<Steps>
+
+### Select Java Version
+Go to your server panel's **Startup** or **Settings** tab. Ensure the **Java Version** is set to **Java 8** or higher. Java 21 is highly recommended for newer plugins to work.
+
+### Switch to Custom Jar
+In the server type selection, look for an option called **Custom Jar**, **Upload Jar**, or **Java (Generic)**. Do **not** select Bedrock Dedicated Server (BDS), as that is for the C++ version.
+
+### Download Nukkit
+Download the latest `nukkit-1.0-SNAPSHOT.jar` from the [Cloudburst dl](https://repo.opencollab.dev/api/maven/latest/file/maven-snapshots/cn/nukkit/nukkit/1.0-SNAPSHOT?extension=jar).
+
+### Upload the Jar
+1. Go to the **File Manager** in your hosting panel.
+2. Delete any existing server jars (like `server.jar`, `paper.jar`) to avoid conflicts.
+3. Upload your downloaded `nukkit-1.0-SNAPSHOT.jar`.
+
+### Rename the Jar (Crucial)
+Most hosting panels look for a specific file name to start the server (usually `server.jar`).
+1. Check what your **Startup Command** is looking for (e.g., `java -jar server.jar`).
+2. Rename your uploaded `nukkit-1.0-SNAPSHOT.jar` to match that name (e.g., rename it to `server.jar`).
+
+### Start the Server
+Go to the **Console** page and click **Start**. The server should boot up.
+If you see the Nukkit startup logs, you did it correctly!
+
+</Steps>

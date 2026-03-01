@@ -1,0 +1,86 @@
+---
+title: Plugins
+description: Learn how to install and manage plugins on your Nukkit server.
+---
+
+# Plugins
+
+Plugins extend your server's functionality by adding new features, commands, and gameplay mechanics.
+
+## Finding Plugins
+
+- **Cloudburst Resources**: [cloudburstmc.org/resources](https://cloudburstmc.org/resources/)
+
+### Popular Plugins
+
+- **EssentialsNK**: Essential commands and server management tools.
+- **EconomyAPI**: The standard economy framework for virtual currencies.
+- **SimpleAuth**: Security plugin to require players to register and log in.
+- **MobPlugin**: Enables mob AI and natural spawning.
+- **Pokkit**: Provides limited compatibility layers for loading Spigot plugins on Bedrock.
+
+---
+
+## Installing Plugins
+
+<Steps>
+
+### Download the Plugin
+Download the `.jar` file from a trusted source.
+
+### Stop Your Server
+Type `stop` in the console to safely shut down the server.
+
+### Place the Plugin
+Move the `.jar` file into the `plugins/` folder in your server directory.
+
+### Start the Server
+Launch your server. The plugin will load automatically.
+
+### Verify Installation
+Type `plugins` in the console to see a list of loaded plugins.
+
+</Steps>
+
+---
+
+## Managing Plugins
+
+### Listing Plugins
+To see all active plugins:
+```bash
+plugins
+```
+
+### Plugin Configuration
+Most plugins create their own folder in `plugins/` with a `config.yml` file:
+```text
+plugins/
+├── MyPlugin.jar
+└── MyPlugin/
+    └── config.yml
+```
+
+Edit the `config.yml` to customize plugin settings, then restart.
+
+### Removing Plugins
+1. Stop the server
+2. Delete the plugin `.jar` file from `plugins/`
+3. Optionally, delete the plugin's config folder
+4. Restart the server
+
+---
+
+## Troubleshooting
+
+<Blockquote color="danger">
+  **Plugin Not Loading?** Check the `logs/server.log` file for error messages. Common issues include:
+  - Incompatible plugin version
+  - Missing dependencies
+  - Conflicting plugins
+</Blockquote>
+
+### Common Fixes
+- **Update the plugin**: Check for newer versions compatible with your server
+- **Check dependencies**: Some plugins require other plugins to work
+- **Read documentation**: Always check the plugin's installation guide

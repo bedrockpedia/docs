@@ -1,0 +1,171 @@
+---
+title: Installation
+description: A step-by-step guide to installing Nukkit on Windows, Linux, and macOS.
+---
+
+# Installation
+
+Get your Nukkit server up and running on your preferred operating system.
+
+## Requirements
+
+Before we begin, make sure you have the following:
+
+- [Java 8+](https://adoptium.net/temurin/releases/) (Required, Java 21 recommended for newer plugins)
+- [Nukkit JAR](https://dl.opencollab.dev/nukkit) file (The server core, typically named `nukkit-1.0-SNAPSHOT.jar`)
+
+---
+
+## Windows
+
+<Steps>
+
+### Create Startup Script
+Paste the following text into a new text document:
+
+```bat
+java -jar nukkit-1.0-SNAPSHOT.jar
+pause
+```
+
+### Save the File
+Save the file as `start.bat` into the directory where your `nukkit-1.0-SNAPSHOT.jar` is located.
+
+### Run the Server
+Double click the batch file `start.bat` to start the server.
+
+</Steps>
+
+---
+
+## Linux
+
+<Steps>
+
+### Create Startup Script
+Paste the following text into a new text document:
+
+```bash
+#!/bin/sh
+java -jar nukkit-1.0-SNAPSHOT.jar
+```
+
+### Save the File
+Save the file as `start.sh` into the directory where your `nukkit-1.0-SNAPSHOT.jar` is located.
+
+### Grant Permissions
+Open terminal in the directory and execute the following command:
+
+```bash
+chmod +x start.sh
+```
+
+### Run the Server
+Run the startup script:
+
+```bash
+./start.sh
+```
+
+</Steps>
+
+---
+
+## Mac OS X
+
+<Steps>
+
+### Create Startup Script
+Paste the following text into a new text document:
+
+```bash
+#!/bin/sh
+cd "$( dirname "$0" )"
+java -jar nukkit-1.0-SNAPSHOT.jar
+```
+
+### Save the File
+Save the file as `start.command` into the directory where your `nukkit-1.0-SNAPSHOT.jar` is located.
+
+### Grant Permissions
+Open terminal and type into it (don't hit enter yet):
+
+```bash
+chmod a+x
+```
+Drag your startup script file into the terminal window. (Make sure you have a space between `chmod a+x` and your startup script in the command). Then hit enter.
+
+### Run the Server
+Double click the startup script to start the server.
+
+</Steps>
+
+---
+
+## Multicraft
+
+- If there's already an option for Nukkit in the JAR file selection menu, you can simply select it and restart your server upon save. However, this may not be recommended if your host does not keep up to date with the latest Nukkit builds.
+- If you have access to upload custom server JARs (FTP), download the Nukkit JAR and enter in the name of the file via the JAR file input box located on the index of the panel. Some hosts may require you to rename your JAR to a specific name (like `custom.jar`) and then select it from the dropdown menu.
+
+---
+
+## Join Locally
+
+You can connect to your own server using the generic local IP address.
+
+<Steps>
+
+### Open Minecraft
+Open Minecraft Bedrock Edition.
+
+### Go to Servers
+Navigate to **Play** > **Servers**.
+
+### Add Server
+Click on the **Add Server** button.
+
+### Enter Details
+Fill in the server information:
+- **Server Name**: `Localhost`
+- **Server Address**: `127.0.0.1`
+- **Port**: `19132` (Default)
+
+### Save and Join
+Click **Save**, find the server in the list, and join it.
+
+</Steps>
+
+<Blockquote color="danger">
+  🚫 **Warning**: Some people may not be able to connect to their server using the local IP `127.0.0.1`. If this happens, try connecting with your LAN IP (for example `192.168.x.x`). Do NOT use `localhost` for IP address.
+
+  **How to find LAN IP (Windows):** Open Command Prompt and type `ipconfig`. Look for "IPv4 Address".
+</Blockquote>
+
+---
+
+## Let Friends Join
+
+To allow friends to join from outside your local network (e.g., from their homes), you need to make your server publicly accessible.
+
+<Steps>
+
+### Port Forward
+Log in to your router's admin panel and forward **UDP** port **19132** to your computer's local IP.
+
+### Find Public IP
+Search "what is my ip" on Google to find your public IP address.
+
+### Share Details
+Send your **Public IP** address and port (`19132`) to your friends.
+
+### Connection
+Your friends should add the server using your **Public IP** as the address.
+
+</Steps>
+
+---
+
+### Now you can join the server!
+Your Nukkit server is ready. Enjoy playing!
+
+If you have any issues joining, please check your firewall settings or ask for help in our [community](/docs/guide/introduction#community).

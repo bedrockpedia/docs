@@ -1,0 +1,102 @@
+---
+title: Updating
+description: Keep your PocketMine-MP server up to date with the latest features and fixes.
+---
+
+# Updating
+
+Regular updates ensure your server has the latest features, bug fixes, and security patches.
+
+## Before You Update
+
+<Blockquote color="warning">
+  **Important**: Always backup your server before updating!
+</Blockquote>
+
+<Steps>
+
+### Backup Your Server
+Make a copy of your entire server folder, especially:
+- `worlds/` - Your world data
+- `plugins/` - Your plugins
+- `pocketmine.yml` and `server.properties` - Your configurations
+
+### Check Compatibility
+Visit the [PocketMine-MP Releases](https://github.com/PocketMine-MP/PocketMine-MP/releases) page and check:
+- New features
+- Breaking changes
+- Plugin compatibility notes
+
+</Steps>
+
+---
+
+## Update Process
+
+<Steps>
+
+### Stop the Server
+Type `stop` in the console to safely shut down the server.
+
+### Download Latest Version
+  1. Download the newest `PocketMine-MP.phar` from [PocketMine-MP Releases](https://github.com/pmmp/PocketMine-MP/releases).
+  2. Download the latest php binarie from [PHP Binaries](https://github.com/pmmp/PHP-Binaries/releases).
+
+### Replace the Server File
+1. Delete (or rename) the old `PocketMine-MP.phar`.
+2. Place the new `.phar` file in your server folder.
+3. Rename it to `PocketMine-MP.phar` (if it isn't already).
+
+### Start the Server
+Run your startup script (`start.cmd` for Windows or `./start.sh` for Linux/macOS).
+
+### Verify the Update
+Check the console output for the new version number.
+Type `version` in the console to confirm.
+
+</Steps>
+
+---
+
+## After Updating
+
+### Check for Issues
+- Monitor the console for errors
+- Test basic functionality (joining, building, commands)
+- Check if all plugins still work
+
+### Update Plugins
+Some plugins may need updates to work with the new server version. Check:
+- Plugin compatibility
+- New plugin versions
+- Plugin changelogs
+
+---
+
+## Rollback (If Needed)
+
+If something goes wrong:
+
+<Steps>
+
+### Stop the Server
+Type `stop` in the console.
+
+### Restore Backup
+Replace the new `.phar` with your backed-up old version.
+
+### Start the Server
+Launch with the previous version while you troubleshoot.
+
+</Steps>
+
+---
+
+## Update Schedule
+
+<Blockquote color="primary">
+  **Recommendation**: Check for updates weekly. Major updates may include important security fixes.
+</Blockquote>
+
+- **Stable Releases**: Recommended for production servers
+- **Canary/Beta Builds**: Latest features, but may be less stable

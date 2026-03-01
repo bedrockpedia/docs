@@ -1,0 +1,16 @@
+{
+    "routes": [
+        {
+            "key": "guide",
+            "title": "Getting Started",
+            "defaultOpen": true,
+            "routes": [
+                {
+                    "key": "introduction",
+                    "title": "Introduction",
+                    "path": "/docs/resource-packs/intro.mdx"
+                }
+            ]
+        }
+    ]
+}

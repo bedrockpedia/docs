@@ -1,0 +1,109 @@
+---
+title: Server Overview
+description: A complete guide to the PocketMine-MP server directory and files.
+---
+
+# Server Overview
+
+After successfully starting your server, you will see several generated files and folders. This is the standard structure for a PocketMine-MP server.
+
+## File Structure
+
+Here is the complete directory map of a PocketMine-MP server:
+
+```text
+Server/
+├── bin/                       <- PHP binaries (Windows/Manual installs)
+├── log_archive/               <- Older, compressed server logs
+├── players/                   <- Player data
+├── plugin_data/               <- Configuration files for plugins
+├── plugins/                   <- Install your .phar plugins here
+├── resource_packs/            <- Custom textures and assets
+├── worlds/                    <- Your Minecraft worlds
+├── banned-ips.txt             <- List of banned IPs
+├── banned-players.txt         <- List of banned players
+├── ops.txt                    <- Server operators (admins)
+├── plugin_list.yml            <- List and load order of plugins
+├── pocketmine.yml             <- PocketMine-MP configuration
+├── PocketMine-MP.phar         <- The server core executable
+├── server.lock                <- Prevents running multiple servers in the same folder
+├── server.log                 <- The active console output log
+├── server.properties          <- Minecraft server configuration
+├── start.cmd                  <- Windows startup script
+└── white-list.txt             <- Whitelist for allowed players
+
+
+```
+
+---
+
+## Folders Explained
+
+### `bin/`
+Contains the PHP binaries required to run PocketMine-MP. This is usually present if you installed the server manually or on Windows.
+
+### `log_archive/`
+When your server restarts, old `server.log` files are compressed and moved here to save space while keeping a history of console outputs.
+
+### `players/`
+This folder holds data about players on the server, like their inventory, achievements, and other player-related info.
+
+### `plugin_data/`
+When a plugin runs, it often generates its own configuration files (like `config.yml`) and data. All of that is stored inside this folder, organized by plugin name.
+
+### `plugins/`
+Here, you put your plugins (which are `.phar` files). Plugins add new features to your server. For example, they can create new commands or change how the game works.
+
+### `resource_packs/`
+This folder is where you can add custom textures and sounds for the game. Resource packs change how the game looks and sounds, like custom skins or different block textures.
+
+### `worlds/`
+This folder holds all the Minecraft worlds the server uses. For example, the main world, the Nether, and the End all have their own folders here.
+**Important**: **Back up this folder regularly** to prevent data loss.
+
+---
+
+## Important Files
+
+### `banned-ips.txt`
+This file lists the IP addresses that have been banned from the server. It helps the server know which IP addresses are not allowed to join.
+
+### `banned-players.txt`
+This file lists the players who have been banned from the server. It helps the server know which players are not allowed to join.
+
+### `ops.txt`
+This file lists the server operators (admins). Players listed here have full command access.
+
+### `plugin_list.yml`
+A configuration file that tracks what plugins are installed and handles their load order or cache status.
+
+### `pocketmine.yml`
+This is the main settings file for PocketMine-MP. It holds all the server's configuration options, like performance settings, chunk limits, and other core details.
+
+### `PocketMine-MP.phar`
+This is the file that runs the server. It’s the core executable code that makes the PocketMine-MP server work.
+
+### `server.lock`
+A temporary lock file created when the server is running to prevent another instance from starting in the exact same directory and breaking your world data.
+
+### `server.log`
+The active text document that records everything printed in the server console (chats, errors, plugin messages).
+
+### `server.properties`
+The standard Minecraft server configuration file. It stores generic server options like the server port, max players, gamemode, and MOTD.
+
+### `start.cmd`
+This is your startup script (for Windows). Double-click this to launch the server.
+- On Linux/macOS, you would instead use `./start.sh`.
+
+### `white-list.txt`
+This file lists the players who are allowed to join the server. When the whitelist is enabled, only players in this file can join.
+- **Enable**: Set `white-list=true` or `white-list=on` in `server.properties`.
+
+---
+
+## The Console
+
+The terminal window where you started the server is your **Console**.
+- **Run commands**: Type commands like `op <player>`, `gamemode 1 <player>`, or `stop`.
+- **Safety**: Do **not** close this window directly! Always type `stop` to save and shut down safely.

@@ -1,0 +1,80 @@
+{
+    "routes": [
+        {
+            "key": "guide",
+            "title": "Getting Started",
+            "defaultOpen": true,
+            "keywords": "guide, getting started, start, heroui",
+            "routes": [
+                {
+                    "key": "introduction",
+                    "title": "Introduction",
+                    "keywords": "introduction, heroui",
+                    "path": "/docs/pnx/guide/intro.mdx"
+                },
+                {
+                    "key": "installation",
+                    "title": "Installation",
+                    "keywords": "getting started, installation, start, heroui",
+                    "path": "/docs/pnx/guide/installation.mdx"
+                },
+                {
+                    "key": "hosting",
+                    "title": "Hosting Platforms",
+                    "keywords": "hosting, server, paper, spigot, free hosting, paid hosting, vps",
+                    "path": "/docs/pnx/guide/hosting.mdx"
+                },
+                {
+                    "key": "server-overview",
+                    "title": "Server Overview",
+                    "keywords": "server overview, directory structure, files, config",
+                    "path": "/docs/pnx/guide/server-overview.mdx"
+                },
+                {
+                    "key": "next-steps",
+                    "title": "Next Steps",
+                    "keywords": "next steps, configuration, plugins, permissions, op, commands",
+                    "path": "/docs/pnx/guide/next-steps.mdx"
+                }
+            ]
+        },
+        {
+            "key": "how-to-guide",
+            "title": "How to Guide",
+            "defaultOpen": true,
+            "keywords": "how to guide, configuration, plugins, commands, updating, troubleshooting",
+            "routes": [
+                {
+                    "key": "configuration",
+                    "title": "Configuration",
+                    "keywords": "configuration, settings, server.properties, pnx.yml",
+                    "path": "/docs/pnx/how-to/configuration.mdx"
+                },
+                {
+                    "key": "plugins",
+                    "title": "Plugins",
+                    "keywords": "plugins, addons, extensions, mods",
+                    "path": "/docs/pnx/how-to/plugins.mdx"
+                },
+                {
+                    "key": "commands",
+                    "title": "Commands",
+                    "keywords": "commands, console, admin, operator",
+                    "path": "/docs/pnx/how-to/commands.mdx"
+                },
+                {
+                    "key": "updating",
+                    "title": "Updating",
+                    "keywords": "updating, upgrade, new version",
+                    "path": "/docs/pnx/how-to/updating.mdx"
+                },
+                {
+                    "key": "troubleshooting",
+                    "title": "Troubleshooting",
+                    "keywords": "troubleshooting, errors, debug, fix, issues",
+                    "path": "/docs/pnx/how-to/troubleshooting.mdx"
+                }
+            ]
+        }
+    ]
+}

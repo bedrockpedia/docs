@@ -1,0 +1,68 @@
+---
+title: Configuration
+description: Learn how to configure your PocketMine-MP server settings.
+---
+
+# Configuration
+
+PocketMine-MP offers extensive configuration options to customize your server's behavior, performance, and features.
+
+## Main Configuration Files
+
+### `server.properties`
+The standard Minecraft server configuration file.
+
+**Common Settings:**
+- `motd`: The "Message of the Day" shown in the server list (Default: `PocketMine-MP Server`)
+- `server-port`: The IPv4 port your server runs on (Default: `19132`)
+- `enable-ipv6`: Enables IPv6 support (`on` or `off`)
+- `white-list`: Turn the server whitelist `on` or `off`
+- `max-players`: Maximum number of concurrent players allowed
+- `gamemode`: Default game mode (`SURVIVAL`, `CREATIVE`, `ADVENTURE`, or `SPECTATOR`)
+- `difficulty`: World difficulty (`0`=Peaceful, `1`=Easy, `2`=Normal, `3`=Hard)
+- `pvp`: Enable player vs player combat (`on` or `off`)
+- `xbox-auth`: Require players to authenticate via Xbox Live (`on` or `off`)
+
+### `pocketmine.yml`
+PocketMine-MP-specific advanced configuration.
+
+**Key Sections:**
+- **Performance**: Tick rate, chunk settings, entity limits
+- **World Generation**: Generator settings, terrain options
+- **Network**: Protocol settings, compression
+- **Features**: Enable/disable specific PocketMine-MP features
+
+---
+
+## Editing Configuration
+
+<Steps>
+
+### Stop the Server
+Always stop your server before editing config files:
+```bash
+stop
+```
+
+### Edit the File
+Open `server.properties` or `pocketmine.yml` with any text editor (Notepad, VS Code, Nano).
+
+### Save Changes
+Save the file after making your changes.
+
+### Restart the Server
+Start your server to apply the new settings.
+
+</Steps>
+
+---
+
+## Important Notes
+
+<Blockquote color="warning">
+  **Warning**: Invalid values in config files can prevent your server from starting. Always backup your config files before making changes.
+</Blockquote>
+
+- Changes only take effect **after a restart**
+- Comments in config files start with `#`
+- Boolean values in `server.properties` use `on` or `off` (lowercase). In `pocketmine.yml`, they use `true` or `false`.

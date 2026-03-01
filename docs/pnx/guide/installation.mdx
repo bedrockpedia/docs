@@ -1,0 +1,222 @@
+---
+title: Installation
+description: A step-by-step guide to installing PowerNukkitX on Windows, Linux, and macOS.
+---
+
+# Installation
+
+Get your PowerNukkitX server up and running on your preferred operating system.
+
+## Requirements
+
+Before we begin, make sure you have the following:
+
+- [Java 21](https://adoptium.net/temurin/releases/) or later (Required)
+- [PowerNukkitX JAR](https://github.com/PowerNukkitX/PowerNukkitX/releases) file (The server core)
+
+---
+
+## Windows
+
+Follow these steps to set up your server on Windows:
+
+<Steps>
+
+### Download the Server
+Create a new folder on your computer. You can name this folder anything you like, but for example, name it `pnx-server`.Then, move the downloaded `PowerNukkitX.jar` file into this folder.
+
+### Create Startup Script
+You can create the script manually or download it.
+
+**Option 1: Download Script**
+[Download start.bat](https://github.com/PowerNukkitX/PowerNukkitX/releases) (click on **Start.bat** and download it.")
+
+**Option 2: Create Manually**
+In the same folder, create a new file named `start.bat`. Right-click it and select **Edit**, then paste the following code:
+
+```batch
+@echo off
+@echo off
+
+TITLE PowerNukkitX server software for Minecraft: Bedrock Edition
+
+REM Check if Java is installed
+java -version >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 (
+    echo Java is not installed. Please install Java 21 or higher.
+    echo You can refer to the installation instructions at https://docs.powernukkitx.org/installation/windows
+    pause
+    exit 1
+)
+
+REM Check if powernukkitx.jar exists
+IF NOT EXIST "powernukkitx.jar" (
+    echo PowerNukkitX.jar not found
+    echo You can download the file from https://github.com/PowerNukkitX/PowerNukkitX/releases
+    pause
+    exit 1
+)
+
+set JAVA_CMD="java"
+set JAR_NAME="powernukkitx.jar"
+
+%JAVA_CMD% -Dfile.encoding=UTF-8 ^
+    -Djansi.passthrough=true ^
+    -Dterminal.ansi=true ^
+    -XX:+UseZGC ^
+    -XX:+ZGenerational ^
+    -XX:+UseStringDeduplication ^
+    --add-opens java.base/java.lang=ALL-UNNAMED ^
+    --add-opens java.base/java.io=ALL-UNNAMED ^
+    --add-opens java.base/java.net=ALL-UNNAMED ^
+    -jar %JAR_NAME%
+```
+
+### Run the Server
+Double-click `start.bat` to launch your server. You will see the console output as the server starts.
+
+</Steps>
+
+---
+
+## Linux
+
+For Linux users (Ubuntu, Debian, CentOS, etc.), here is the detailed manual installation process:
+
+<Steps>
+
+### Install Java
+Ensure Java 21 is installed. You can check by running `java -version` in the terminal.
+If not installed, use your package manager (e.g., `sudo apt install openjdk-21-jre`).
+
+### Create a Folder for PowerNukkitX
+Create a folder for PowerNukkitX, for example, `server`:
+
+```bash
+mkdir server
+```
+
+### Navigate to the Folder
+Navigate to the folder you created:
+
+```bash
+cd server
+```
+
+### Download the ZIP Archive
+Download the `powernukkitx-run.zip` archive with the following command:
+
+```bash
+wget https://github.com/PowerNukkitX/PowerNukkitX/releases/download/snapshot/powernukkitx-run.zip
+```
+
+### Extract the Archive
+Extract the contents of the ZIP archive into the folder you created:
+
+```bash
+unzip powernukkitx-run.zip
+```
+
+Now run this command to remove unnecessary files:
+```bash
+rm cli.jar
+rm powernukkitx-run.zip
+```
+
+### Download the start.sh File
+Download the `start.sh` startup file with this command:
+
+```bash
+wget https://raw.githubusercontent.com/PowerNukkitX/scripts/master/start.sh
+```
+
+### Grant Execution Permissions
+Grant execution permissions to the startup file:
+
+```bash
+chmod +x start.sh
+```
+
+### Start the Server
+Execute the startup file:
+
+```bash
+./start.sh
+```
+
+After starting, your folder structure will expand to look like this:
+- `command_data`
+- `libs`
+- `logs`
+- `players`
+- `plugins`
+- `worlds`
+- `start.sh`
+- `powernukkitx.jar`
+
+Your Server is Now Online. You can now connect to your server using your server's IP address and the default port `19132`.
+
+</Steps>
+
+---
+
+## Join Locally
+
+You can connect to your own server using the generic local IP address.
+
+<Steps>
+
+### Open Minecraft
+Open Minecraft Bedrock Edition.
+
+### Go to Servers
+Navigate to **Play** > **Servers**.
+
+### Add Server
+Click on the **Add Server** button.
+
+### Enter Details
+Fill in the server information:
+- **Server Name**: `Localhost`
+- **Server Address**: `127.0.0.1`
+- **Port**: `19132` (Default)
+
+### Save and Join
+Click **Save**, find the server in the list, and join it.
+
+</Steps>
+
+<Blockquote color="danger">
+  🚫 **Warning**: Some people may not be able to connect to their server using the local IP `127.0.0.1`. If this happens, try connecting with your LAN IP (for example `192.168.x.x`). Do NOT use `localhost` for IP address.
+
+  **How to find LAN IP (Windows):** Open Command Prompt and type `ipconfig`. Look for "IPv4 Address".
+</Blockquote>
+
+---
+
+## Let Friends Join
+
+To allow friends to join from outside your local network (e.g., from their homes), you need to make your server publicly accessible.
+
+<Steps>
+
+### Port Forward
+Log in to your router's admin panel and forward **UDP** port **19132** to your computer's local IP.
+
+### Find Public IP
+Search "what is my ip" on Google to find your public IP address.
+
+### Share Details
+Send your **Public IP** address and port (`19132`) to your friends.
+
+### Connection
+Your friends should add the server using your **Public IP** as the address.
+
+</Steps>
+
+---
+
+### Now you can join the server!
+Your PowerNukkitX server is ready. Enjoy playing!
+
+If you have any issues joining, please check your firewall settings or ask for help in our [community](/docs/guide/introduction#community).
